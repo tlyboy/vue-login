@@ -1,37 +1,34 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import LoginView from '@/views/LoginView.vue'
-import RegisterView from '@/views/RegisterView.vue'
-import ForgotView from '@/views/ForgotView.vue'
+import Home from '@/views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'Home',
+    component: Home
   },
   {
     path: '/login',
-    name: 'login',
-    component: LoginView
+    name: 'Login',
+    component: () => import('@/views/Login.vue')
   },
   {
     path: '/register',
-    name: 'register',
-    component: RegisterView
+    name: 'Register',
+    component: () => import('@/views/Register.vue')
   },
   {
     path: '/forgot',
-    name: 'forgot',
-    component: ForgotView
+    name: 'Forgot',
+    component: () => import('@/views/Forgot.vue')
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: process.env.IS_ELECTRON ? 'hash' : 'history',
   base: process.env.BASE_URL,
   routes
 })

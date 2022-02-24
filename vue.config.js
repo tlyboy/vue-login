@@ -1,5 +1,20 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  transpileDependencies: true,
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue-login/' : '/'
-})
+module.exports = {
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue-login/' : '/',
+  pluginOptions: {
+    electronBuilder: {
+      builderOptions: {
+        appId: 'com.tlyboy.vue-login',
+        win: {
+          target: ['nsis', '7z']
+        },
+        nsis: {
+          oneClick: false,
+          allowToChangeInstallationDirectory: true,
+          runAfterFinish: false,
+          shortcutName: 'vue-login'
+        },
+        publish: ['github']
+      }
+    }
+  }
+}
