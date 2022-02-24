@@ -11,7 +11,7 @@ module.exports = {
           oneClick: false,
           allowToChangeInstallationDirectory: true,
           runAfterFinish: false,
-          shortcutName: 'vue-login'
+          shortcutName: 'Vue Login'
         },
         publish: ['github']
       }
