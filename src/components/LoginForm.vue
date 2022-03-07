@@ -2,13 +2,34 @@
   <div class="login-form">
     <a-form :form="form" @submit="handleSubmit">
       <a-form-item>
-        <a-input v-decorator="['userName', { rules: [{ required: true, message: '请输入你的用户名！' }] }]" placeholder="用户名">
-          <a-icon slot="prefix" type="user" style="color: rgba(0, 0, 0, 0.25)" />
+        <a-input
+          v-decorator="[
+            'userName',
+            { rules: [{ required: true, message: '请输入你的用户名！' }] }
+          ]"
+          placeholder="用户名"
+        >
+          <a-icon
+            slot="prefix"
+            type="user"
+            style="color: rgba(0, 0, 0, 0.25)"
+          />
         </a-input>
       </a-form-item>
       <a-form-item>
-        <a-input v-decorator="['password', { rules: [{ required: true, message: '请输入你的密码！' }] }]" type="password" placeholder="密码">
-          <a-icon slot="prefix" type="lock" style="color: rgba(0, 0, 0, 0.25)" />
+        <a-input
+          v-decorator="[
+            'password',
+            { rules: [{ required: true, message: '请输入你的密码！' }] }
+          ]"
+          type="password"
+          placeholder="密码"
+        >
+          <a-icon
+            slot="prefix"
+            type="lock"
+            style="color: rgba(0, 0, 0, 0.25)"
+          />
         </a-input>
       </a-form-item>
       <a-form-item>
@@ -23,8 +44,12 @@
         >
           记住我
         </a-checkbox>
-        <router-link to="/forgot" class="login-form-forgot"> 忘记密码 </router-link>
-        <a-button type="primary" html-type="submit" class="login-form-button"> 登录 </a-button>
+        <router-link to="/forgot" class="login-form-forgot">
+          忘记密码
+        </router-link>
+        <a-button type="primary" html-type="submit" class="login-form-button">
+          登录
+        </a-button>
         或者
         <router-link to="/register"> 立即注册！ </router-link>
       </a-form-item>
@@ -45,7 +70,10 @@ export default {
         if (!err) {
           const { userName, password } = values
 
-          const { data: res } = await this.$http.post('/login', { userName, password })
+          const { data: res } = await this.$http.post('/login', {
+            userName,
+            password
+          })
 
           switch (res.status) {
             case 1:

@@ -1,6 +1,13 @@
 <template>
   <div class="login">
-    <Background :style="{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }">
+    <Background
+      :style="{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh'
+      }"
+    >
       <LoginForm />
     </Background>
   </div>

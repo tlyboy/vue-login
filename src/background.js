@@ -8,7 +8,9 @@ import path from 'path'
 import { autoUpdater } from 'electron-updater'
 
 // Scheme must be registered before the app is ready
-protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
+protocol.registerSchemesAsPrivileged([
+  { scheme: 'app', privileges: { secure: true, standard: true } }
+])
 
 app.applicationMenu = null
 
