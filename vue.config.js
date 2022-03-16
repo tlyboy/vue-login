@@ -5,7 +5,7 @@ module.exports = {
       builderOptions: {
         appId: 'com.tlyboy.vue-login',
         win: {
-          target: ['nsis', '7z']
+          target: ['nsis']
         },
         nsis: {
           oneClick: false,
