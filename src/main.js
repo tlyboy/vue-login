@@ -7,7 +7,7 @@ import axios from 'axios'
 
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = 'https://api.tlyboy.com'
+axios.defaults.baseURL = process.env.VUE_APP_AXIOS_DEFAULTS_BASEURL
 Vue.prototype.$http = axios
 
 Vue.use(Form).use(Input).use(Icon).use(Checkbox).use(Button)
