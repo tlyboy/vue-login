@@ -1,2 +1,2 @@
-dist_electron/
-pnpm-lock.yaml
+/dist
+/dist_electron
