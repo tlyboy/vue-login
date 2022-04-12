@@ -24,8 +24,8 @@ git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
-git push -f git@github.com:tlyboy/vue-login.git main:gh-pages
-git push -f git@gitee.com:tlyboy/vue-login.git main:gh-pages
+git push -f git@github.com:tlyboy/vue-login.git master:gh-pages
+git push -f git@gitee.com:tlyboy/vue-login.git master:gh-pages
 
 cd -
 

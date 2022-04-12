@@ -1,29 +1,37 @@
 <template>
   <div class="login">
-    <Background
-      :style="{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh'
-      }"
-    >
-      <LoginForm />
-    </Background>
+    <LoginForm />
   </div>
 </template>
 
 <script>
-import Background from '@/components/Background.vue'
 import LoginForm from '@/components/LoginForm.vue'
 
 export default {
   name: 'Login',
   components: {
-    Background,
     LoginForm
   }
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &::before {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: center no-repeat url('../assets/img/bg.jpg');
+    background-size: cover;
+  }
+}
+</style>
