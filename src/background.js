@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow, globalShortcut } from 'electron'
+import { app, BrowserWindow, protocol } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -12,13 +12,12 @@ protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
 
-app.applicationMenu = null
-
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    useContentSize: true,
     minWidth: 800,
     minHeight: 600,
     /* global __static */
@@ -31,6 +30,8 @@ async function createWindow() {
     }
   })
 
+  win.setMenuBarVisibility(false)
+
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
@@ -40,26 +41,6 @@ async function createWindow() {
     win.loadURL('app://./index.html')
     autoUpdater.checkForUpdatesAndNotify()
   }
-
-  globalShortcut.register('F11', () => {
-    if (!win.isFullScreen()) {
-      win.setFullScreen(true)
-    } else {
-      win.setFullScreen(false)
-    }
-  })
-
-  globalShortcut.register('ESC', () => {
-    if (win.isFullScreen()) {
-      win.setFullScreen(false)
-    }
-  })
-
-  const contents = win.webContents
-
-  globalShortcut.register('CommandOrControl+Shift+I', () => {
-    contents.toggleDevTools()
-  })
 }
 
 // Quit when all windows are closed.
