@@ -2,7 +2,7 @@
   "name": "vue-login",
   "version": "0.1.0",
   "private": true,
-  "description": "Vue Login",
+  "description": "Vue2 登录注册程序",
   "license": "MIT",
   "author": "Guany",
   "main": "background.js",

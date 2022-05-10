@@ -2,25 +2,25 @@
 
 ## Project setup
 
-```text
+```bash
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
 
-```text
+```bash
 yarn run serve
 ```
 
 ### Compiles and minifies for production
 
-```text
+```bash
 yarn run build
 ```
 
 ### Lints and fixes files
 
-```text
+```bash
 yarn run lint
 ```
 

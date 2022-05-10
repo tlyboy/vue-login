@@ -22,6 +22,8 @@ async function createWindow() {
     minHeight: 600,
     /* global __static */
     icon: path.join(__static, 'favicon.ico'),
+    show: false,
+    autoHideMenuBar: true,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
@@ -30,7 +32,9 @@ async function createWindow() {
     }
   })
 
-  win.setMenuBarVisibility(false)
+  win.once('ready-to-show', () => {
+    win.show()
+  })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
