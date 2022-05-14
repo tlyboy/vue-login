@@ -1,5 +1,12 @@
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/vue-login/' : '/',
+  css: {
+    loaderOptions: {
+      less: {
+        javascriptEnabled: true
+      }
+    }
+  },
   pluginOptions: {
     electronBuilder: {
       builderOptions: {
