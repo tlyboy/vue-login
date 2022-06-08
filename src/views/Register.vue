@@ -24,7 +24,7 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
-    background: center no-repeat url('../assets/img/bg.jpg');
+    background: center no-repeat url('../assets/bg.jpg');
     background-size: cover;
   }
 }
