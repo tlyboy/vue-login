@@ -30,7 +30,7 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
-    background: center no-repeat url('../assets/bg.jpg');
+    background: center no-repeat url('../assets/images/bg.png');
     background-size: cover;
   }
 }
