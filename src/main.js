@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { Form, Input, Icon, Checkbox, Button, message } from 'ant-design-vue'
+import '@//assets/styles/base.less'
 import App from '@/App.vue'
 import router from '@/router'
 import store from '@/store'
