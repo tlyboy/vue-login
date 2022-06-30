@@ -38,13 +38,14 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.path === '/') {
     const token = localStorage.getItem('token')
+
     if (token) {
-      next() // 访问的是后台主页，且有 token 的值
+      next()
     } else {
-      next('/login') // 访问的是后台主页，但是没有 token 的值
+      next('/login')
     }
   } else {
-    next() // 访问的不是后台主页，直接放行
+    next()
   }
 })
 

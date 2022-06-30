@@ -70,23 +70,23 @@ export default {
         if (!err) {
           const { userName, password } = values
 
-          const { data: res } = await this.$http.post('/login', {
+          const { data } = await this.$http.post('/login', {
             userName,
             password
           })
 
-          switch (res.status) {
+          switch (data.status) {
             case 1:
-              this.$message.success(res.msg)
-              localStorage.setItem('token', res.token)
+              this.$message.success(data.msg)
+              localStorage.setItem('token', data.token)
               this.$router.push('/')
               break
             case 0:
-              this.$message.error(res.msg)
+              this.$message.error(data.msg)
               localStorage.removeItem('token')
               break
             case -1:
-              this.$message.warning(res.msg)
+              this.$message.warning(data.msg)
               localStorage.removeItem('token')
               break
             default:
