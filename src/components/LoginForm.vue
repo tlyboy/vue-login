@@ -88,13 +88,13 @@ export default {
   border-radius: 12px;
   background-color: #fff;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+}
 
-  .login-form-forgot {
-    float: right;
-  }
+.login-form-forgot {
+  float: right;
+}
 
-  .login-form-button {
-    width: 100%;
-  }
+.login-form-button {
+  width: 100%;
 }
 </style>
