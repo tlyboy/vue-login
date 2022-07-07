@@ -10,7 +10,7 @@ import { autoUpdater } from 'electron-updater'
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
 
-async function createWindow() {
+const createWindow = async () => {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,
