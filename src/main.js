@@ -1,11 +1,11 @@
-import Vue from 'vue'
 import '@/assets/styles/base.less'
+import axios from 'axios'
+import Vue from 'vue'
 import { Icon, Button, Form, Input, Checkbox, message } from 'ant-design-vue'
 import Background from '@/components/Background.vue'
 import App from '@/App.vue'
 import router from '@/router'
 import store from '@/store'
-import axios from 'axios'
 
 Vue.config.productionTip = false
 
