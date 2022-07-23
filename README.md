@@ -3,25 +3,25 @@
 ## Project setup
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ### Compiles and hot-reloads for development
 
 ```bash
-yarn run serve
+pnpm run serve
 ```
 
 ### Compiles and minifies for production
 
 ```bash
-yarn run build
+pnpm run build
 ```
 
 ### Lints and fixes files
 
 ```bash
-yarn run lint
+pnpm run lint
 ```
 
 ### Customize configuration
