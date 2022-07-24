@@ -3,7 +3,7 @@
     <a-form :form="form" @submit="handleSubmit">
       <a-form-item>
         <a-input
-          v-decorator="['userName', { rules: [{ required: true, message: '请输入你的用户名！' }] }]"
+          v-decorator="['username', { rules: [{ required: true, message: '请输入你的用户名！' }] }]"
           placeholder="用户名"
         >
           <a-icon slot="prefix" type="user" style="color: rgba(0, 0, 0, 0.25)" />
@@ -53,28 +53,34 @@ export default {
         if (!err) {
           const { username, password } = values
 
-          const { data } = await this.$http.post('login', {
-            username,
-            password
-          })
+          let res
 
-          const { status, msg, token } = data
+          try {
+            res = await this.$http.post('login', {
+              username,
+              password
+            })
+          } catch (error) {
+            res = {
+              data: {
+                msg: '暂无服务'
+              }
+            }
+          }
+
+          const { status, msg, token } = res.data
 
           switch (status) {
+            case 0:
+              this.$message.error(msg)
+              break
             case 1:
               this.$message.success(msg)
               localStorage.setItem('token', token)
               this.$router.push({ name: 'Home' })
               break
-            case 0:
-              this.$message.error(msg)
-              localStorage.removeItem('token')
-              break
-            case -1:
-              this.$message.warning(msg)
-              localStorage.removeItem('token')
-              break
             default:
+              this.$message.info(msg)
               break
           }
         }
