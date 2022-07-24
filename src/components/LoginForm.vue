@@ -48,27 +48,30 @@ export default {
   methods: {
     handleSubmit(e) {
       e.preventDefault()
+
       this.form.validateFields(async (err, values) => {
         if (!err) {
-          const { userName, password } = values
+          const { username, password } = values
 
-          const { data } = await this.$http.post('/login', {
-            userName,
+          const { data } = await this.$http.post('login', {
+            username,
             password
           })
 
-          switch (data.status) {
+          const { status, msg, token } = data
+
+          switch (status) {
             case 1:
-              this.$message.success(data.msg)
-              localStorage.setItem('token', data.token)
-              this.$router.push('/')
+              this.$message.success(msg)
+              localStorage.setItem('token', token)
+              this.$router.push({ name: 'Home' })
               break
             case 0:
-              this.$message.error(data.msg)
+              this.$message.error(msg)
               localStorage.removeItem('token')
               break
             case -1:
-              this.$message.warning(data.msg)
+              this.$message.warning(msg)
               localStorage.removeItem('token')
               break
             default:
