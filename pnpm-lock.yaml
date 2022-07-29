@@ -20,6 +20,7 @@ specifiers:
   eslint-plugin-vue: ^6.2.2
   less: ^3.0.4
   less-loader: ^5.0.0
+  moment: ^2.29.4
   prettier: ^2.2.1
   vue: ^2.6.11
   vue-cli-plugin-electron-builder: ~2.1.1
@@ -32,6 +33,7 @@ dependencies:
   axios: 0.26.1
   core-js: 3.23.5
   electron-updater: 5.0.5
+  moment: 2.29.4
   vue: 2.7.8
   vue-router: 3.5.4
   vuex: 3.6.2_vue@2.7.8

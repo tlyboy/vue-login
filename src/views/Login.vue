@@ -1,23 +1,23 @@
 <template>
-  <Background>
-    <div class="login">
-      <LoginForm />
+  <t-background>
+    <div class="t-login">
+      <t-login-form />
     </div>
-  </Background>
+  </t-background>
 </template>
 
 <script>
-import LoginForm from '@/components/LoginForm.vue'
+import TLoginForm from '@/components/TLoginForm.vue'
 
 export default {
   components: {
-    LoginForm
+    TLoginForm
   }
 }
 </script>
 
 <style lang="less" scoped>
-.login {
+.t-login {
   display: flex;
   justify-content: center;
   align-items: center;

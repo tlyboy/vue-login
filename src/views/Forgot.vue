@@ -1,5 +1,5 @@
 <template>
-  <Background>
-    <div class="forgot"></div>
-  </Background>
+  <t-background>
+    <div class="t-forgot"></div>
+  </t-background>
 </template>

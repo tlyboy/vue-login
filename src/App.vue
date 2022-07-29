@@ -1,5 +1,5 @@
 <template>
-  <a-config-provider :getPopupContainer="getPopupContainer">
+  <a-config-provider :locale="zhCN">
     <div id="app">
       <router-view />
     </div>
@@ -7,14 +7,12 @@
 </template>
 
 <script>
+import zhCN from 'ant-design-vue/lib/locale-provider/zh_CN'
+
 export default {
-  methods: {
-    getPopupContainer(el, dialogContext) {
-      if (dialogContext) {
-        return dialogContext.getDialogWrap()
-      } else {
-        return document.body
-      }
+  data() {
+    return {
+      zhCN
     }
   }
 }

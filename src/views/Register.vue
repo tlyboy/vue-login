@@ -1,5 +1,5 @@
 <template>
-  <Background>
-    <div class="register"></div>
-  </Background>
+  <t-background>
+    <div class="t-register"></div>
+  </t-background>
 </template>

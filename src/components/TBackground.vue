@@ -1,17 +1,17 @@
 <template>
-  <div class="background">
+  <div class="t-background">
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Background'
+  name: 'TBackground'
 }
 </script>
 
 <style lang="less" scoped>
-.background::before {
+.t-background::before {
   content: '';
   position: fixed;
   z-index: -1;

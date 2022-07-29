@@ -21,6 +21,7 @@
     "axios": "^0.26.0",
     "core-js": "^3.6.5",
     "electron-updater": "^5.0.5",
+    "moment": "^2.29.4",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
