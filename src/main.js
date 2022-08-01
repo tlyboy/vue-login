@@ -1,4 +1,4 @@
-import '@/assets/styles/base.less'
+import '@/assets/styles/main.less'
 import axios from 'axios'
 import moment from 'moment'
 import 'moment/locale/zh-cn'
@@ -9,15 +9,14 @@ import App from '@/App.vue'
 import router from '@/router'
 import store from '@/store'
 
-Vue.config.productionTip = false
-
 axios.defaults.baseURL = process.env.VUE_APP_AXIOS_DEFAULTS_BASEURL
-
-Vue.prototype.$axios = axios
-
 moment.locale('zh-cn')
 
+Vue.config.productionTip = false
+
+Vue.prototype.$axios = axios
 Vue.prototype.$moment = moment
+Vue.prototype.$message = message
 
 Vue.use(ConfigProvider)
 Vue.use(Icon)
@@ -25,8 +24,6 @@ Vue.use(Button)
 Vue.use(Form)
 Vue.use(Input)
 Vue.use(Checkbox)
-
-Vue.prototype.$message = message
 
 Vue.component('TBackground', TBackground)
 
