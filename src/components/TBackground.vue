@@ -1,5 +1,5 @@
 <template>
-  <div class="t-background">
+  <div class="background">
     <slot />
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.t-background::before {
+.background::before {
   content: '';
   position: fixed;
   z-index: -1;

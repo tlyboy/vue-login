@@ -1,6 +1,6 @@
 <template>
   <t-background>
-    <div class="t-login">
+    <div class="login">
       <t-login-form />
     </div>
   </t-background>
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.t-login {
+.login {
   display: flex;
   justify-content: center;
   align-items: center;

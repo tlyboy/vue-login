@@ -1,5 +1,5 @@
 <template>
-  <div class="t-login-form">
+  <div class="login-form">
     <a-form :form="form" @submit="handleSubmit">
       <a-form-item>
         <a-input
@@ -30,8 +30,8 @@
         >
           记住我
         </a-checkbox>
-        <router-link to="/forgot" class="t-login-form-forgot"> 忘记密码 </router-link>
-        <a-button type="primary" html-type="submit" class="t-login-form-button"> 登录 </a-button>
+        <router-link to="/forgot" class="login-form-forgot"> 忘记密码 </router-link>
+        <a-button type="primary" html-type="submit" class="login-form-button"> 登录 </a-button>
         或者
         <router-link to="/register"> 立即注册！ </router-link>
       </a-form-item>
@@ -43,7 +43,7 @@
 export default {
   name: 'TLoginForm',
   beforeCreate() {
-    this.form = this.$form.createForm(this, { name: 't_login_form' })
+    this.form = this.$form.createForm(this, { name: 'login_form' })
   },
   methods: {
     handleSubmit(e) {
@@ -91,7 +91,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.t-login-form {
+.login-form {
   padding: 24px 24px 0 24px;
   max-width: 300px;
   border-radius: 12px;
@@ -99,11 +99,11 @@ export default {
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
 }
 
-.t-login-form-forgot {
+.login-form-forgot {
   float: right;
 }
 
-.t-login-form-button {
+.login-form-button {
   width: 100%;
 }
 </style>
